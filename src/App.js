@@ -4,6 +4,8 @@ import {BrowserRouter,Route, Switch} from 'react-router-dom';
 import Register from './components/Register';
 import HomePage from './components/HomePage';
 import Login from './components/Login';
+import "./App.css"
+
 function App() {
   return (
     <div className="App">
