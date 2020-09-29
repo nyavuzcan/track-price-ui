@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Input from "./Input"
 
 export default class Login extends Component {
     state={
@@ -15,18 +16,11 @@ export default class Login extends Component {
 
     render() {
         return (
+            <div className="login-form-container">
             <form>
                 <h3>Sign In</h3>
-
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" onChange={this.onChange} />
-                </div>
-
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" onChange={this.onChange} />
-                </div>
+                <Input label="Email address" type="text" name="email" className="form-control" placeholder="Email address" onChange={this.onChange} />
+                <Input label="Password" type="password" name="password" className="form-control" placeholder="Password" onChange={this.onChange} />
 
                 <div className="form-group">
                     <div className="custom-control custom-checkbox">
@@ -35,11 +29,15 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                <div style={{display:"flex",justifyContent:"center"}}>
+                <button type="submit" className="btn btn-dark btn-block" style={{width:"25%"}}>Submit</button>
+                </div>
+        
                 <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
+                    Forgot <a href="#" style={{color:"blue"}}>password?</a>
                 </p>
             </form>
+            </div>
         );
     }
 }
